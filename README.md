@@ -2,6 +2,10 @@
 
 A web app that uses the Unsplash API to fetch and display images with infinite scrolling. As the user reaches the bottom of the page, new images automatically load, creating a smooth and endless browsing experience.
 
+## Live Demo
+
+[Click here to try Infinite Image Scroll](https://bisumandi.github.io/infinite-image-scroll/)
+
 ## 🚀 Tech Stack
 
 - HTML
@@ -26,10 +30,6 @@ A web app that uses the Unsplash API to fetch and display images with infinite s
 - Simply open the website.
 - Images will load automatically.
 - Keep scrolling to load more images infinitely!
-
-## 🔗 Live Demo
-
-(Coming soon...)
 
 ## 🖼️ Screenshots
 
