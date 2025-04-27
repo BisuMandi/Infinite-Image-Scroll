@@ -42,3 +42,10 @@ A web app that uses the Unsplash API to fetch and display images with infinite s
 - Display a fallback message or image if no results are returned.
 - Add a "Back to Top" button for better navigation.
 
+## Getting Started
+
+To run this project locally:
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/BisuMandi/infinite-image-scroll.git
