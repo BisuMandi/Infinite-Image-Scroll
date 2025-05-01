@@ -4,7 +4,7 @@ A web app that uses the Unsplash API to fetch and display images with infinite s
 
 ## Live Demo
 
-[Click here to try Infinite Image Scroll](https://bisumandi.github.io/infinite-image-scroll/)
+[Click here to try Infinite Image Scroll](https://bisumandi.github.io/Infinite-Image-Scroll/)
 
 ## 🚀 Tech Stack
 
