@@ -119,7 +119,7 @@ window.addEventListener('scroll', () => {
   document.getElementById('backToTop-container').hidden = false;
   if ((window.scrollY + window.innerHeight) >= (document.body.offsetHeight - 1000) && isReady) {
     console.log("load more!");
-    // loadAndDisplayPhotos();
+    loadAndDisplayPhotos();
     isReady = false;
   }
 });
