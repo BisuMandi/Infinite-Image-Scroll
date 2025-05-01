@@ -58,9 +58,6 @@
     }
 
     #backToTopBtn {
-        height: 42px;
-        width: 42px;
-        font-size: 16px;
         right: 24px;
     }
 }
@@ -87,11 +84,8 @@
     }
 
     #backToTopBtn {
-        height: 41px;
-        width: 41px;
         bottom: 26px;
         right: 20px;
-        font-size: 15px;
         padding: 0;
     }
 }
@@ -107,12 +101,8 @@
     }
 
     #backToTopBtn {
-        height: 39px;
-        width: 39px;
-        position: fixed;
         bottom: 24px;
         right: 19px;
-        font-size: 14px;
     }
 }
 
