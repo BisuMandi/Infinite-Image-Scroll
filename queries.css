@@ -1,4 +1,11 @@
 /* Media Queries */
+@media screen and (max-width: 1024px) {
+    #backToTopBtn {
+        height: 50px;
+        width: 50px;
+        font-size: 20px;
+    }
+}
 
 @media screen and (max-width: 900px) {
     .heading {
@@ -28,6 +35,12 @@
         left: 15px;
         bottom: 15px;
     }
+
+    #backToTopBtn {
+        height: 45px;
+        width: 45px;
+        font-size: 17px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -42,6 +55,13 @@
     .img-title {
         left: 12px;
         bottom: 12px;
+    }
+
+    #backToTopBtn {
+        height: 42px;
+        width: 42px;
+        font-size: 16px;
+        right: 24px;
     }
 }
 
@@ -65,6 +85,15 @@
         bottom: 10px;
         font-size: 14px;
     }
+
+    #backToTopBtn {
+        height: 41px;
+        width: 41px;
+        bottom: 26px;
+        right: 20px;
+        font-size: 15px;
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -75,6 +104,15 @@
 
     .image-container {
         margin: 10px 15px;
+    }
+
+    #backToTopBtn {
+        height: 39px;
+        width: 39px;
+        position: fixed;
+        bottom: 24px;
+        right: 19px;
+        font-size: 14px;
     }
 }
 

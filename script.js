@@ -94,6 +94,36 @@ function displayPhotos() {
   imagesLoaded = 0;
 }
 
+// Back to Top button
+const backToTopBtn = document.getElementById("backToTopBtn");
+let hideTimeout;
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    backToTopBtn.classList.add("show");
+
+    clearTimeout(hideTimeout);
+    hideTimeout = setTimeout(() => {
+      backToTopBtn.classList.remove("show");
+    }, 1500);
+  }
+});
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+
+// Evenet listeners
+window.addEventListener('scroll', () => {
+  document.getElementById('backToTop-container').hidden = false;
+  if ((window.scrollY + window.innerHeight) >= (document.body.offsetHeight - 1000) && isReady) {
+    console.log("load more!");
+    // loadAndDisplayPhotos();
+    isReady = false;
+  }
+});
+
 // function to call getPhotos() and then displayPhotos() synchronously
 async function loadAndDisplayPhotos() {
   await getPhotos();
@@ -101,14 +131,6 @@ async function loadAndDisplayPhotos() {
   displayPhotos();
 }
 
-// Evenet listeners
-window.addEventListener('scroll', () => {
-  if ((window.scrollY + window.innerHeight) >= (document.body.offsetHeight - 1000) && isReady) {
-    console.log("load more!");
-    loadAndDisplayPhotos();
-    isReady = false;
-  }
-})
 
 // Initially loading and displaying images
 loadAndDisplayPhotos();

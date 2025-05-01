@@ -14,12 +14,13 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="queries.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Infinity Scroll</title>
 </head>
 
 <body>
     <!-- heading  -->
-    <h1 class="heading">UNSPLASH - INFINITE SCROLL</h1>
+    <h1 class="heading" id="heading">UNSPLASH - INFINITE SCROLL</h1>
     <!-- loader -->
     <div class="loader" id="loader">
         <img src="images/loader.svg" alt="loading">
@@ -28,6 +29,9 @@
     <div class="image-container" id="image-container">
         <!-- Here comes image boxes -->
     </div>
+    <button id="backToTopBtn" title="Go to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
     <script>
         const accessKey = 'fjXo-yj-oangq1X0B08w53y2p_FScXAFmGycS959mfs';
     </script>
