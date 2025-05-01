@@ -94,11 +94,18 @@ function displayPhotos() {
   imagesLoaded = 0;
 }
 
-// Back to Top button
+// Back to Top btn
 const backToTopBtn = document.getElementById("backToTopBtn");
 let hideTimeout;
 
-window.addEventListener("scroll", () => {
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Evenet listeners
+window.addEventListener('scroll', () => {
+
+  // Show Back to Top btn
   if (window.scrollY > 100) {
     backToTopBtn.classList.add("show");
 
@@ -107,16 +114,8 @@ window.addEventListener("scroll", () => {
       backToTopBtn.classList.remove("show");
     }, 1500);
   }
-});
-
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-
-// Evenet listeners
-window.addEventListener('scroll', () => {
-  document.getElementById('backToTop-container').hidden = false;
+  
+  // Load more images if user is near the bottom
   if ((window.scrollY + window.innerHeight) >= (document.body.offsetHeight - 1000) && isReady) {
     console.log("load more!");
     loadAndDisplayPhotos();
