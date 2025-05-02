@@ -40,7 +40,7 @@ A web app that uses the Unsplash API to fetch and display images with infinite s
 - Add dark mode support.
 - Improve error handling when the API fails.
 - Display a fallback message or image if no results are returned.
-- Add a "Back to Top" button for better navigation.
+- ~~Add a "Back to Top" button for better navigation.~~ ✅ Implemented
 
 ## Getting Started
 
