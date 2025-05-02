@@ -97,6 +97,7 @@ function displayPhotos() {
 // Back to Top btn
 const backToTopBtn = document.getElementById("backToTopBtn");
 let hideTimeout;
+let lastScrollTop = window.scrollY;
 
 backToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -104,16 +105,23 @@ backToTopBtn.addEventListener("click", () => {
 
 // Evenet listeners
 window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY;
 
   // Show Back to Top btn
-  if (window.scrollY > 100) {
+  if (currentScroll < lastScrollTop && currentScroll > 100) {
+    // User scrolled up and has scrolled down at least 100px
     backToTopBtn.classList.add("show");
 
     clearTimeout(hideTimeout);
     hideTimeout = setTimeout(() => {
       backToTopBtn.classList.remove("show");
-    }, 1500);
+    }, 2000);
+  } else {
+    // hide immediately when scrolling down
+    backToTopBtn.classList.remove("show");
   }
+
+  lastScrollTop = currentScroll;
   
   // Load more images if user is near the bottom
   if ((window.scrollY + window.innerHeight) >= (document.body.offsetHeight - 1000) && isReady) {
