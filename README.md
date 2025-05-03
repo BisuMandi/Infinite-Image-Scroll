@@ -63,6 +63,7 @@ Infinite-Image-Scroll/
 │   └── images/
 │       └── favicon.png
 └── README.md
+```
 
 ## 📈 Future Improvements
 
@@ -83,7 +84,7 @@ Infinite-Image-Scroll/
 ```bash
 git clone https://github.com/BisuMandi/Infinite-Image-Scroll.git
 cd Infinite-Image-Scroll
-
+```
 ### 2. Set Up Backend
 
 Run the commands on terminal
@@ -91,16 +92,19 @@ Run the commands on terminal
 ```bash
 cd backend
 npm install
+```
 
 Create a `.env` file in `backend/` and add your Unsplash API key:
 
 ```env
 UNSPLASH_ACCESS_KEY=your_api_key_here
+```
 
 Run the backend server:
 
 ```bash
 node server.js
+```
 
 ### 3. Open Frontend
 
@@ -109,6 +113,7 @@ In a new terminal:
 ```bash
 cd frontend
 # Open index.html in your browser or serve with a simple static server
+```
 
 ## 🤝 Contributing
 
@@ -117,4 +122,3 @@ Pull requests and suggestions are welcome! If you'd like to contribute, feel fre
 ---
 
 Made with 💻 and ☕ by [@BisuMandi](https://github.com/BisuMandi)
-
