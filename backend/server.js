@@ -1,13 +1,19 @@
 import express from 'express';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv'
+import cors from 'cors';
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Serve frontend
-app.use(express.static('../frontend'));
+// app.use(express.static('../frontend'));
+
+// Enable CORS and allow only your frontend domain
+app.use(cors({
+  origin: 'https://bisumandi.github.io' // allow only this origin
+}));
 
 const apiUrl = `https://api.unsplash.com/photos/random?client_id=${process.env.UNSPLASH_ACCESS_KEY}&count=10`;
 // API proxy endpoint
