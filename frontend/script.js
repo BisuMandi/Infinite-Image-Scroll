@@ -7,7 +7,8 @@ let isReady = false;
 let arrayOfPhotos = [];
 
 const count = 10;
-const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${accessKey}&count=${count}`;
+// const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${accessKey}&count=${count}`;
+const apiUrl = '/api/photos';
 
 // function to get array of photos from Unsplash server
 async function getPhotos() {
