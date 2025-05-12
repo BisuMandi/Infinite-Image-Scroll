@@ -9,7 +9,7 @@ let arrayOfPhotos = [];
 // Display error message
 function showErrorMessage(message) {
   const brokenImage = document.createElement('img');
-  brokenImage.setAttribute('src', 'images/broken image.png');
+  brokenImage.setAttribute('src', 'images/broken-image.png');
 
   const errText = document.createElement('p');
   errText.className = 'err-text';
