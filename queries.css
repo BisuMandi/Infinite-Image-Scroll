@@ -41,6 +41,15 @@
         width: 45px;
         font-size: 17px;
     }
+
+    .err-text {
+        font-size: 18px;
+        font-weight: 550;
+    }
+
+    .retry-btn {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -59,6 +68,15 @@
 
     #backToTopBtn {
         right: 24px;
+    }
+
+    .err-text {
+        font-size: 17px;
+        font-weight: 520;
+    }
+
+    .retry-btn {
+        font-size: 13px;
     }
 }
 
@@ -88,6 +106,21 @@
         right: 20px;
         padding: 0;
     }
+
+    .err-text {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .retry-btn {
+        padding: 9px 18px;
+        font-size: 12px;
+    }
+
+    .retry-btn:hover {
+        padding: 8px 17px;
+        border: 3px solid rgb(139, 151, 241)
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -103,6 +136,25 @@
     #backToTopBtn {
         bottom: 24px;
         right: 19px;
+    }
+
+    .err-message img {
+        width: 160px;
+    }
+
+    .err-text {
+        font-size: 12px;
+        padding: 0 15px;
+    }
+
+    .retry-btn {
+        padding: 7px 15px;
+        font-size: 10px;
+    }
+
+    .retry-btn:hover {
+        padding: 6px 14px;
+        border: 3px solid rgb(139, 151, 241)
     }
 }
 

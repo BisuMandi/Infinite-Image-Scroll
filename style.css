@@ -65,7 +65,7 @@ body {
     left: 20px;
     bottom: 20px;
     color: white;
-    font-family:  Inter, Open Sans, sans-serif;
+    font-family: Inter, Open Sans, sans-serif;
     /* font-weight: 400; */
     text-decoration: none;
     z-index: 100;
@@ -117,14 +117,55 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease, background-color 0.3s ease;
-  }
+}
 
-  #backToTopBtn:hover {
+#backToTopBtn:hover {
     background-color: rgb(35, 34, 34);
-  }
-  
-  #backToTopBtn.show {
+}
+
+#backToTopBtn.show {
     opacity: 1;
     pointer-events: auto;
-  }
-  
+}
+
+.err-message {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 200px;
+}
+
+.err-message img {
+    width: 200px;
+}
+
+.err-text {
+    color: crimson;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.retry-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 11px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 23px;
+    background-color: #2326af;
+    color: white;
+}
+
+.retry-btn:hover {
+    background-color: #3739b4;
+}
+
+.retry-btn:active {
+    padding: 9px 18px;
+    border: 4px solid rgb(139, 151, 241);
+}

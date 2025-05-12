@@ -6,20 +6,60 @@ let imagesLoaded = 0;
 let isReady = false;
 let arrayOfPhotos = [];
 
+// Display error message
+function showErrorMessage(message) {
+  const brokenImage = document.createElement('img');
+  brokenImage.setAttribute('src', 'images/broken image.png');
+
+  const errText = document.createElement('p');
+  errText.className = 'err-text';
+  errText.textContent = message;
+
+  const retryBtn = document.createElement('button');
+  retryBtn.className = 'retry-btn';
+  retryBtn.textContent = 'Retry';
+
+  const errDiv = document.createElement('div');
+  errDiv.className = 'err-message';
+
+  errDiv.appendChild(brokenImage);
+  errDiv.appendChild(errText);
+  errDiv.appendChild(retryBtn);
+
+  setTimeout(() => {
+    imageContainer.appendChild(errDiv);
+  }, 2000);
+
+  retryBtn.addEventListener('click', () => {
+    imageContainer.removeChild(errDiv);
+    loader.hidden = false;
+    loadAndDisplayPhotos();
+  });
+}
+
 const count = 10;
 // const apiUrl = '/api/photos';
-const apiUrl = 'https://infinite-image-scroll-backend.onrender.com/api/photos';
+const backendUrl = 'https://infinite-image-scroll-backend.onrender.com/api/photos';
 
 
 // function to get array of photos from Unsplash server
 async function getPhotos() {
   try {
     isReady = false;
-    const response = await fetch(apiUrl);
-    arrayOfPhotos = await response.json();
-    console.log("Images fetched successfully.");
+    const response = await fetch(backendUrl);
+
+    if (!response.ok)
+      throw new Error(`HTTP error! status: ${response.status}`);
+
+    const data = await response.json();
+    if (!Array.isArray(data))
+      throw new Error("Unexpected response format from backend");
+
+    console.log("Images fetched successfully");
+    arrayOfPhotos = data;
   } catch (err) {
-    console.log(err, "Failed to fetch images");
+    console.log("Failed to fetch images", err);
+    showErrorMessage("Oops! We're having trouble loading images. Please try again later.");
   }
 }
 
@@ -124,7 +164,7 @@ window.addEventListener('scroll', () => {
   }
 
   lastScrollTop = currentScroll;
-  
+
   // Load more images if user is near the bottom
   if ((window.scrollY + window.innerHeight) >= (document.body.offsetHeight - 1000) && isReady) {
     console.log("load more!");

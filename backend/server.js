@@ -15,18 +15,37 @@ app.use(cors({
   origin: 'https://bisumandi.github.io' // allow only this origin
 }));
 
-const apiUrl = `https://api.unsplash.com/photos/random?client_id=${process.env.UNSPLASH_ACCESS_KEY}&count=10`;
 // API proxy endpoint
 app.get("/api/photos", async (req, res) => {
-  try {
-    // console.log("Calling Unsplash API", apiUrl);
+
+  const tryFetch = async (accesskey) => {
+    const apiUrl = `https://api.unsplash.com/photos/random?client_id=${accesskey}&count=10`;
+
     const response = await fetch(apiUrl);
-    const data = await response.json();
-    // console.log("Data received from API", data);
+
+    if (!response.ok)
+      throw new Error(`Unsplash API failed with status ${response.status}`);
+
+    return response.json();
+  };
+
+  try {
+    const data = await tryFetch(process.env.UNSPLASH_ACCESS_KEY_PRIMARY);
     res.json(data);
-  } catch (error) {
-    console.log("Error fetching Unsplash images", error);
-    res.status(500).json({ error: "Failed to fetch images" });
+  } catch (err1) {
+    console.log("Primary API key failed. Trying Secondary key ...");
+    try {
+      const data = await tryFetch(process.env.UNSPLASH_ACCESS_KEY_SECONDARY);
+      res.json(data);
+    } catch (err2) {
+      console.log("Both API keys failed", err2.message);
+      res.status(500).json(
+        {
+          error: "Unabale to fetch images from Unsplash using both keys",
+          message: err2.message
+        }
+      );
+    }
   }
 });
 
