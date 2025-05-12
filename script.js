@@ -134,6 +134,7 @@ function displayPhotos() {
     imageContainer.appendChild(box);
   });
   imagesLoaded = 0;
+  arrayOfPhotos = [];
 }
 
 // Back to Top btn
